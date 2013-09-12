@@ -5,6 +5,8 @@ package Evercraft;
 */
 public class PlayerCharacter {
 	private String name;
+	private String alignment;
+	
 
 	public void setName(String character) {
 		name = character;
@@ -12,6 +14,14 @@ public class PlayerCharacter {
 
 	public String getName() {
 		return name;
+	}
+
+	public void setAlignment(String align) {
+
+	}
+
+	public String getAlignment() {
+		return	alignment;
 	}
 
 }
