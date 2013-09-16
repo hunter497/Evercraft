@@ -1,6 +1,7 @@
 import Evercraft.*;
 
-public class CharacterTest extends junit.framework.TestCase {
+// Have to refactor these to utilize Before and After cases
+public class PlayerCharacterTest extends junit.framework.TestCase {
 
 	public void testCharacterName() {
 		PlayerCharacter character = new PlayerCharacter();

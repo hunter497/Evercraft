@@ -35,7 +35,14 @@ public class PlayerCharacter {
 	public String attack(EnemyCharacter enemy) {
 		Die die = new Die();
 		int roll = die.roll(20);
-		if(roll > enemy.getArmorClass()) return "Hit";
+		if(roll == 20) {
+			enemy.damage(2);
+			return "Critical Hit!";
+		}
+		else if(roll > enemy.getArmorClass()) {
+			enemy.damage(1);
+			return "Hit";
+		}
 		else return "Miss";
 	}
 
