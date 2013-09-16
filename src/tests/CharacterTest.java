@@ -13,4 +13,24 @@ public class CharacterTest extends junit.framework.TestCase {
 		character.setAlignment("Good");
 		assertEquals("Good", character.getAlignment());
 	}
+
+	public void testInvalidCharacterAlignment() {
+		PlayerCharacter character = new PlayerCharacter();
+		character.setAlignment("BadAlignment");
+		assertEquals("Invalid alignment. Please enter 'Good', 'Evil', or 'Neutral':", character.getAlignment());
+	}
+
+	// Default AC(Armor Class) should be 10
+	public void testDefaultArmorClass() {
+		PlayerCharacter character = new PlayerCharacter();
+		assertEquals(10, character.getArmorClass());
+	}
+
+	// Default HP(Hit Points) should be 5
+	public void testDefaultHitPoints() {
+		PlayerCharacter character = new PlayerCharacter();
+		assertEquals(5, character.getHealthPoints());
+	}
+
+
 }
