@@ -1,6 +1,9 @@
 package Evercraft;
 /**
 * My own foray into Guy Royse's and George Walters II's Evercraft Kata in Java
+* Some of my own stuff thrown in, since Guy isn't here to teach the Kata
+* I like the idea so much, I'm going to expand upon it.
+* Make this implement GameCharacter in future
 * by Nick Hunter
 */
 public class PlayerCharacter {
@@ -29,11 +32,11 @@ public class PlayerCharacter {
 
 	public int getHealthPoints() { return healthPoints; }
 
-	// public String Attack(Enemy enemy) {
-	// 	Dice die = new Dice(20);
-	// 	roll = die.roll();
-	// 	if(roll > enemy.getArmorClass()) return "Hit";
-	// 	else return "Miss";
-	// }
+	public String attack(EnemyCharacter enemy) {
+		Die die = new Die();
+		int roll = die.roll(20);
+		if(roll > enemy.getArmorClass()) return "Hit";
+		else return "Miss";
+	}
 
 }
