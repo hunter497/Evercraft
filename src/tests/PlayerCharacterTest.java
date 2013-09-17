@@ -33,5 +33,10 @@ public class PlayerCharacterTest extends junit.framework.TestCase {
 		assertEquals(5, character.getHealthPoints());
 	}
 
+	// Check that all attributes are 10
+	public void testDefaultAttributes() {
+		PlayerCharacter character = new PlayerCharacter();
+	}
+
 
 }

@@ -9,8 +9,48 @@ package Evercraft;
 public class PlayerCharacter {
 	private String name;
 	private String alignment;
-	private int armorClass = 10;
-	private int healthPoints = 5;
+	private int armorClass;
+	private int healthPoints;
+	private int[] attributes;
+	private int[] modifiers;
+
+	public PlayerCharacter() {
+		armorClass = 10;
+		healthPoints = 5;
+		attributes = new int[6];
+		modifiers = new int[6];
+		for(int i=0; i < attributes.length; i++) attributes[i] = 10;
+		setModifiers();			
+	}
+
+	// Setting attributes, this is more readable, but might just pass in 
+	// an integer array instead of the ints separately
+	public void setAttributes(int strength, int dexterity, int constituion,
+		int wisdom, int intelligence, int charisma) {
+		attributes[0] = strength;
+		attributes[1] = dexterity;
+		attributes[2] = constituion;
+		attributes[3] = wisdom;
+		attributes[4] = intelligence;
+		attributes[5] = charisma;
+		setModifiers();
+	}
+
+	private void setModifiers() {
+		for(int i = 0; i < attributes.length; i++) {
+			if(i < 19) modifiers[i] = 5;
+			else if(i < 17) modifiers[i] = 4;
+			else if(i < 15) modifiers[i] = 3;
+			else if(i < 13) modifiers[i] = 2;
+			else if(i < 11) modifiers[i] = 1;
+			else if(i < 9) modifiers[i] = 0;
+			else if(i < 7) modifiers[i] = -1;
+			else if(i < 5) modifiers[i] = -2;
+			else if(i < 3) modifiers[i] = -3;
+			else if(i < 1) modifiers[i] = -4;
+			else modifiers[i] = -5;
+		}
+	}
 
 	public void setName(String character) { name = character; }
 
