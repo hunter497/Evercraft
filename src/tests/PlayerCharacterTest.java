@@ -29,13 +29,21 @@ public class PlayerCharacterTest extends junit.framework.TestCase {
 
 	// Default HP(Hit Points) should be 5
 	public void testDefaultHitPoints() {
-		PlayerCharacter character = new PlayerCharacter();
+		GameCharacter character = new PlayerCharacter();
 		assertEquals(5, character.getHealthPoints());
 	}
 
-	// Check that all attributes are 10
-	public void testDefaultAttributes() {
+	// Default Strength should be 10
+	public void testDefaultAttribute() {
 		PlayerCharacter character = new PlayerCharacter();
+		assertEquals(10, character.getStrength());
+	}
+
+	// Can set an attribute manually, used for setting stats at the beginning/during the game
+	public void testChangedAttribute() {
+		PlayerCharacter character = new PlayerCharacter();
+		character.setStrength(11);
+		assertEquals(11, character.getStrength());
 	}
 
 
