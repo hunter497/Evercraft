@@ -17,6 +17,6 @@ public class EnemyCharacterTest extends junit.framework.TestCase {
 		EnemyCharacter enemy = new EnemyCharacter();
 		int enemyHealth = enemy.getHealthPoints();
 		enemy.damage(enemyHealth);
-		assertEquals(false, enemy.getAlive());
+		assertEquals(false, enemy.isAlive());
 	}
 }

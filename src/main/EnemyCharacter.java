@@ -9,7 +9,7 @@ public class EnemyCharacter implements GameCharacter {
 
 	public int getArmorClass() { return ArmorClass; }
 	public int getHealthPoints() { return HealthPoints; }
-	public boolean getAlive() { return alive; }
+	public boolean isAlive() { return alive; }
 	public String getName() { return name; }
 
 	public void damage(int damage) {
@@ -21,7 +21,7 @@ public class EnemyCharacter implements GameCharacter {
 		else System.out.println(getName() + " now has " + HealthPoints + "HP left");
 	}
 
-	public String attack(GameCharacter enemy) {
+	public String attack(EnemyCharacter enemy) {
 		Die die = new Die();
 		int roll = die.roll(20);
 		if(roll > enemy.getArmorClass()) {

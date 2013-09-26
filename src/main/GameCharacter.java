@@ -2,9 +2,7 @@ package Evercraft;
 
 public interface GameCharacter {
 	void damage(int damage);
-	int getArmorClass();
-	int getHealthPoints();
-	boolean getAlive();
-	String attack(GameCharacter enemy);
+	boolean isAlive();
+	String attack(EnemyCharacter enemy);
 	String getName();
 }

@@ -9,42 +9,16 @@ public class PlayerCharacterTest extends junit.framework.TestCase {
 		assertEquals("Newbie", character.getName());
 	}
 
-	public void testCharacterAlignment() {
+	public void testCharacterDamage() {
 		PlayerCharacter character = new PlayerCharacter();
-		character.setAlignment("Good");
-		assertEquals("Good", character.getAlignment());
+		character.damage(1);
+		Stats stats = character.getStats();
+		assertEquals(4, stats.getHealthPoints());
 	}
 
-	public void testInvalidCharacterAlignment() {
+	public void testCharacterDeath() {
 		PlayerCharacter character = new PlayerCharacter();
-		character.setAlignment("BadAlignment");
-		assertEquals("Invalid alignment. Please enter 'Good', 'Evil', or 'Neutral':", character.getAlignment());
+		character.damage(5);
+		assertEquals(false, character.isAlive());
 	}
-
-	// Default AC(Armor Class) should be 10
-	public void testDefaultArmorClass() {
-		PlayerCharacter character = new PlayerCharacter();
-		assertEquals(10, character.getArmorClass());
-	}
-
-	// Default HP(Hit Points) should be 5
-	public void testDefaultHitPoints() {
-		GameCharacter character = new PlayerCharacter();
-		assertEquals(5, character.getHealthPoints());
-	}
-
-	// Default Strength should be 10
-	public void testDefaultAttribute() {
-		PlayerCharacter character = new PlayerCharacter();
-		assertEquals(10, character.getStrength());
-	}
-
-	// Can set an attribute manually, used for setting stats at the beginning/during the game
-	public void testChangedAttribute() {
-		PlayerCharacter character = new PlayerCharacter();
-		character.setStrength(11);
-		assertEquals(11, character.getStrength());
-	}
-
-
 }
